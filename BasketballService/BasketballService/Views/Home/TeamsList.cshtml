@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <ul>
+        @foreach (var pl in Model)
+        {
+            <li style="margin-top:15px;">
+                <div style="height:350px; border:solid">
+
+
+                    <a class="kursSzczegolyLink" style="font-size:30px" href="@Url.Action("Details", "Teams" , new { id = pl.TeamId })">
+                        @pl.TeamName
+                        <h4>@pl.TeamDescription</h4>
+                        <img style="height:200px" src="../Content/Teams/@(pl.NameOfLogoFile).png" />
+
+
+
+                    </a>
+
+
+
+                </div>
+            </li>
+        }
+
+    </ul>
+</div>

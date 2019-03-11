@@ -1,0 +1,17 @@
+﻿@model IEnumerable<BasketballService.Models.Player>
+@*i am using IEnumarable type, it gonna be List, which can be used by Foreach*@
+
+
+    <div>
+        <ul>
+            <h1>Zawodnicy</h1>
+            @foreach (var player in Model)
+            {
+                <li>
+                    @player.PlayerName @player.PlayerSurname, pozycja:          @player.PlayerPosition
+                </li>
+            }
+
+        </ul>
+
+    </div>

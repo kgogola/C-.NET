@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "PlayersList";
+}
+<h1>ALL PLAYERS</h1>
+@foreach (var player in Model)
+{
+    <li>
+        <a href="@Url.Action("Details", "Players" , new { id = player.PlayerId })">>
+            @player.PlayerName @player.PlayerSurname, position:@player.PlayerPosition,
+            state:@player.State age: @player.PlayerBornDate.ToShortDateString().
+        </a>
+    </li>
+}
+
+
+
+

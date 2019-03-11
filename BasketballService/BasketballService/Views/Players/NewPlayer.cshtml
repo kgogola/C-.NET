@@ -1,0 +1,35 @@
+﻿@model BasketballService.Models.Player
+
+@{
+    ViewBag.Title = "New Player";
+}
+
+<h2>New player informations</h2>
+
+
+<div>
+
+    @using (Html.BeginForm("NewPlayerCreated", "Players", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.PlayerName)
+            <div>
+                Imię
+                @Html.EditorFor(model => model.PlayerName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PlayerName, "", new { @class = "text-danger" })
+            </div>
+
+            <div>
+                Nazwisko
+                @Html.EditorFor(model => model.PlayerSurname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PlayerSurname, "", new { @class = "text-danger" })
+            </div>
+            <div>
+                <input type="submit" value="Create"/>
+            </div>
+        </div>
+    }
+
+
+
+</div>

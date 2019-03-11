@@ -1,0 +1,19 @@
+﻿@model BasketballService.Models.Team
+
+<h1>@Model.TeamName</h1>
+<h6>@Model.TeamDescription</h6>
+
+
+<img style="height:300px" src="../../Content/Teams/@(Model.NameOfLogoFile).png" />
+
+
+<div>
+    @*Here I call [ChildActionOnly] action in controller which will return PartialView*@
+    @*argument is a TeamId, because i am looking for players with this special atribute*@
+    @Html.Action("PlayersList", new { id = Model.TeamId })
+
+</div>
+
+
+
+    <a href="@Url.Action("Delete", "Teams" , new { id = Model.TeamId })">DELETE TEAM</a>

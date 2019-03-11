@@ -1,0 +1,35 @@
+﻿@model BasketballService.Models.Team
+
+@{
+    ViewBag.Title = "Form";
+}
+
+<h2>Form</h2>
+
+
+<div>
+
+    @using (Html.BeginForm("NewTeamCreated", "Teams", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.TeamName)
+            <div>
+                Nazwa Drużyny
+                @Html.EditorFor(model => model.TeamName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TeamName, "", new { @class = "text-danger" })
+            </div>
+
+            <div>
+                Opis drużyny
+                @Html.EditorFor(model => model.TeamDescription, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TeamDescription, "", new { @class = "text-danger" })
+            </div>
+            <div>
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    }
+
+
+
+</div>
