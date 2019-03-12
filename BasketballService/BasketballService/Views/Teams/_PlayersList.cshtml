@@ -3,15 +3,12 @@
 
 
     <div>
-        <ul>
-            <h1>Zawodnicy</h1>
-            @foreach (var player in Model)
-            {
-                <li>
-                    @player.PlayerName @player.PlayerSurname, pozycja:          @player.PlayerPosition
-                </li>
-            }
+    <div id="zawodnicy">
+      <div class="player naglowekplay">Zawodnicy</div>
+      @foreach (var player in Model)
+      {
+      <div class="player">@player.PlayerName @player.PlayerSurname, pozycja:          @player.PlayerPosition</div>
+      }
 
-        </ul>
-
+    </div>
     </div>

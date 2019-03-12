@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="zawodnicy">
+  <div class="player naglowekplay">ALL PLAYERS</div>
+  @foreach(var player in Model)
+  {
+  <div class="player">@player.PlayerName @player.PlayerSurname, position:@player.PlayerPosition</div>
+  }
+</div>

@@ -3,5 +3,32 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div id="layoutt">
+        @foreach (var pl in Model)
+        {
+                <div id="kluby">
 
+                    <div class="odstep"></div>
+
+              			<div class="club">
+              				<h1 id="nazwa_klubu"> @pl.TeamName </h1>
+              				<div id="info">
+              					<div>
+              						<img style="height:200px" src="../Content/Teams/@(pl.NameOfLogoFile).png">
+              					</div>
+              					<div>
+              						<p id="opis">@pl.TeamDescription
+              						</p>
+              					</div>
+              				</div>
+                      <a class="kursSzczegolyLink" style="font-size:50px" href="@Url.Action("Details", "Teams" , new { id = pl.TeamId })">
+              				<div id="gonext">
+              					More details
+              				</div>
+                      </a>
+              			</div>
+
+                </div>
+        }
+        <div class="odstep"></div>
+</div>

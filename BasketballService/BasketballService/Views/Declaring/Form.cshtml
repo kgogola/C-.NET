@@ -1,0 +1,39 @@
+﻿@model BasketballService.Models.Team
+@{
+    ViewBag.Title = "Form";
+}
+
+<div id="form_odstep"></div>
+<div id="form_lay">
+
+    @using (Html.BeginForm("Index", "Declaring", FormMethod.Post))
+    {
+    <div class="form-group">
+
+
+        <div class="form form_text"><h2>Form</h2></div>
+        <div class="form"></div>
+        <div class="form form_name">Name</div>
+        <div class="form form_nam">
+            @Html.EditorFor(model => model.TeamName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TeamName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form form_desc">Description</div>
+        <div class="form form_descr">
+            @Html.EditorFor(model => model.TeamDescription, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TeamDescription, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form form_img">
+        <img src="../Content/Img/pencil.png" style="width:100px;height:100px;>
+        </div>
+        <div class="form form_button">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+
+    </div>
+    }
+
+
+
+</div>
